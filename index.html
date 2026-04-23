@@ -1,0 +1,100 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>ANNAZ_HOMES PRICE LIST</title>
+    <link rel="icon" type="image/jpeg" href="img/logo.jpg">
+    <link rel="stylesheet" href="styles.css">
+    <!-- FontAwesome for Icons -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+</head>
+<body>
+
+<header>
+    <img src="img/logo.jpg" alt="Annaz Homes Logo" class="brand-logo">
+    <h1>Welcome to ANNAZ_HOMES</h1>
+    <p>Great food for busy lives</p>
+    
+    <div class="social-links">
+        <a href="#" target="_blank"><i class="fa-brands fa-phone"></i> 📞 +234 9061874534</a>
+        <a href="#" target="_blank"><i class="fa-brands fa-facebook"></i> @Annaz_Homes</a>
+        <a href="#" target="_blank"><i class="fa-brands fa-instagram"></i> @Annaz_Homes</a>
+        <a href="#" target="_blank"><i class="fa-brands fa-tiktok"></i> @Annaz_Homes</a>
+    </div>
+
+    <div style="display: inline-block; background-color: #fff3cd; color: #856404; padding: 10px 20px; border-radius: 8px; margin-top: 15px; font-weight: bold; border: 1px solid #ffeeba; text-transform: none; letter-spacing: normal;">
+        ⚠️ IMPORTANT NOTE: All Meals are Pre-order only. Freshly made & delivered to you.
+    </div>
+</header>
+
+<div class="container">
+    <div class="main-content">
+        <div class="tabs">
+            <button class="tab-btn active" onclick="switchTab('foods')"><i class="fa-solid fa-utensils"></i> Foods</button>
+            <button class="tab-btn" onclick="switchTab('drinks')"><i class="fa-solid fa-wine-glass"></i> Drinks</button>
+        </div>
+
+        <div id="foods" class="tab-content active">
+            <!-- Dynamic Food Content Goes Here -->
+        </div>
+
+        <div id="drinks" class="tab-content">
+            <!-- Dynamic Drink Content Goes Here -->
+            <div id="drinks-container"></div>
+        </div>
+    </div>
+
+    <aside class="cart-panel">
+        <h3>
+            <span><i class="fa-solid fa-basket-shopping"></i> Your Order</span>
+            <button type="button" class="clear-cart-btn" onclick="clearCart()" id="clearCartBtn" style="display:none;"><i class="fa-solid fa-trash"></i> Clear</button>
+        </h3>
+        <div id="cart-items">
+            <div style="text-align:center; padding: 2rem 0; color: #888;">
+                <i class="fa-solid fa-cart-arrow-down fa-3x" style="color: #ddd; margin-bottom: 1rem;"></i>
+                <p>Your cart is empty.<br>Select items to start your order.</p>
+            </div>
+        </div>
+        
+        <div id="cart-summary" style="display: none;">
+            <div class="cart-total-wrap">
+                <span>Total:</span>
+                <span id="cart-total" class="cart-total-amt">₦0</span>
+            </div>
+
+            <form id="orderForm">
+                <div class="form-group">
+                    <input type="text" id="custName" placeholder="Full Name" required>
+                </div>
+                <div class="form-group">
+                    <input type="tel" id="custPhone" placeholder="Phone Number" required>
+                </div>
+                <div class="form-group">
+                    <select id="deliveryOption" onchange="toggleAddress(this.value)">
+                        <option value="Pickup">Self Pickup</option>
+                        <option value="Room Delivery">Room Delivery</option>
+                        <option value="Home Delivery">Home Delivery</option>
+                    </select>
+                </div>
+                <div class="form-group" id="addressGroup" style="display:none;">
+                    <textarea id="custAddress" placeholder="Full Address or Room Number"></textarea>
+                </div>
+                <div class="form-group">
+                    <select id="paymentType">
+                        <option value="Cash">Cash on Delivery</option>
+                        <option value="Transfer">Bank Transfer</option>
+                        <option value="POS">POS on Delivery</option>
+                    </select>
+                </div>
+                <button type="submit" class="checkout-btn">
+                    <i class="fa-brands fa-whatsapp fa-lg"></i> Complete Order
+                </button>
+            </form>
+        </div>
+    </aside>
+</div>
+
+<script src="app.js"></script>
+</body>
+</html>
